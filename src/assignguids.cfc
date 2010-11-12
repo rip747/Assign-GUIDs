@@ -37,7 +37,7 @@
 			have to make sure that it's registered as the first callback in case
 			other callback use the property
 			 --->
-			<cfset ArrayPrepend(variables.wheels.class.callbacks["beforeCreate"], "_AssignGUIDs")>
+			<cfset ArrayPrepend(variables.wheels.class.callbacks["beforeValidationOnCreate"], "_AssignGUIDs")>
 		</cfif>
 	</cffunction>
 
@@ -47,7 +47,7 @@
 		<!--- loop through all mappings and see which ones we need to assign a guid to --->
 		<cfloop collection="#variables.wheels.class.mapping#" item="loc.mapping">
 			<cfif StructKeyExists(variables.wheels.class.mapping[loc.mapping], "guid") && variables.wheels.class.mapping[loc.mapping].guid && !IsValid("guid", this[loc.mapping])>
-				<cfset this[loc.mapping] = insert("-", CreateUUID(), 23)>
+				<cfset this[loc.mapping] = UCase(Insert("-", CreateUUID(), 23))>
 			</cfif>
 		</cfloop>
 	</cffunction>
