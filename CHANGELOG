@@ -1,0 +1,9 @@
+0.2 11/11/1020
+==============
+- stick callback in beforeValidationOnCreate chain instead of beforeCreate chain
+- ucase generated guid 
+
+
+0.1 11/11/2010
+==============
+- initial release
