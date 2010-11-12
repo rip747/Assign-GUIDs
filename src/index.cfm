@@ -1,7 +1,7 @@
 <h1>Assign GUIDs</h1>
 
 <p>A very simple plugin that adds a "guid" argument to the propery() model method.</p>
-<p>When set to "true", a beforeCreate callback named "_AssignGUIDs" will be registered, which assigns a guid value to the property before the record is inserted into the database.</p>
+<p>When set to "true", a beforeValidationOnCreate callback named "_AssignGUIDs" will be registered, which assigns a guid value to the property before the record is inserted into the database.</p>
 <p>Very useful when you have a GUID column in a sql server database.</p>
 
 <h3>Example</h3>
